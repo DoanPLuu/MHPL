@@ -3,6 +3,8 @@ package com.example.demo.model;
 import jakarta.persistence.*;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name = "songs")
 public class Song {
@@ -18,10 +20,12 @@ public class Song {
     
     @ManyToOne
     @JoinColumn(name = "album_id")
+    @JsonBackReference("album-songs")
     private Album album;
     
     @ManyToOne
     @JoinColumn(name = "artist_id")
+    @JsonBackReference("artist-songs")
     private Artist artist;
     
     // Constructors

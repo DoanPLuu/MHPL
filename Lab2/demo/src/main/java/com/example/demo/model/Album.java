@@ -5,6 +5,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "albums")
@@ -21,9 +23,11 @@ public class Album {
     
     @ManyToOne
     @JoinColumn(name = "artist_id")
+    @JsonBackReference("artist-albums")
     private Artist artist;
     
     @OneToMany(mappedBy = "album", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference("album-songs")
     private List<Song> songs = new ArrayList<>();
     
     // Constructors
