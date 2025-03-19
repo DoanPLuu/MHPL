@@ -2,7 +2,6 @@ package com.example.demo.controller;
 
 import com.example.demo.model.Album;
 import com.example.demo.service.AlbumService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +16,6 @@ public class AlbumController {
     
     private final AlbumService albumService;
     
-    @Autowired
     public AlbumController(AlbumService albumService) {
         this.albumService = albumService;
     }

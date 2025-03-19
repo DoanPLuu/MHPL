@@ -2,7 +2,6 @@ package com.example.demo.service;
 
 import com.example.demo.model.Album;
 import com.example.demo.repository.AlbumRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -14,7 +13,6 @@ public class AlbumService {
     
     private final AlbumRepository albumRepository;
     
-    @Autowired
     public AlbumService(AlbumRepository albumRepository) {
         this.albumRepository = albumRepository;
     }

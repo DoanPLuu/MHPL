@@ -2,7 +2,6 @@ package com.example.demo.service;
 
 import com.example.demo.model.Song;
 import com.example.demo.repository.SongRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,7 +12,6 @@ public class SongService {
     
     private final SongRepository songRepository;
     
-    @Autowired
     public SongService(SongRepository songRepository) {
         this.songRepository = songRepository;
     }
