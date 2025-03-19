@@ -2,7 +2,6 @@ package com.example.demo.controller;
 
 import com.example.demo.model.Song;
 import com.example.demo.service.SongService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +14,6 @@ public class SongController {
     
     private final SongService songService;
     
-    @Autowired
     public SongController(SongService songService) {
         this.songService = songService;
     }
