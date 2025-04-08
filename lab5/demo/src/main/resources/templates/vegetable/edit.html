@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Vegetable</title>
+</head>
+<body>
+    <h2>Edit Vegetable Form</h2>
+    <form th:action="@{/vegetable/update}" th:object="${vegetable}" method="POST">
+        <label>ID:</label>
+        <input type="number" th:field="*{vegetableID}" readonly /><br/>
+        <label>Name:</label>
+        <input type="text" th:field="*{vegetableName}" /><br/>
+        <label>Unit:</label>
+        <input type="text" th:field="*{unit}" /><br/>
+        <label>Amount:</label>
+        <input type="number" th:field="*{amount}" /><br/>
+        <label>Price:</label>
+        <input type="number" th:field="*{price}" /><br/>
+        <input type="submit" value="Update" />
+    </form>
+</body>
+</html>

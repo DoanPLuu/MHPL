@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Vegetable List</title>
+</head>
+<body>
+    <h1>Vegetable List</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Unit</th>
+            <th>Amount</th>
+            <th>Price</th>
+        </tr>
+        <tr th:each="veg : ${list}">
+            <td th:text="${veg.vegetableID}"></td>
+            <td th:text="${veg.vegetableName}"></td>
+            <td th:text="${veg.unit}"></td>
+            <td th:text="${veg.amount}"></td>
+            <td th:text="${veg.price}"></td>
+            <td><a th:href="@{/vegetable/edit/{id}(id=${veg.vegetableID})}">Edit</a></td>
+        </tr>
+    </table>
+    <a href="/vegetable/add">Add New Vegetable</a>
+</body>
+</html>
